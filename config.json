@@ -1,0 +1,37 @@
+{
+    "name": "testConfig",
+    "pipeLines": [
+        {
+            "name": "timeFramer.js",
+            "type": "feed",
+            "config": {
+                "intervals": [
+                    {
+                        "name": "1m",
+                        "interval": 60000
+                    },
+                    {
+                        "name": "3m",
+                        "interval": 180000
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rsi.js",
+            "type": "prop",
+            "config": {
+                "period": 14
+            }
+        },
+        {
+            "name": "rsiDiffs.js",
+            "type": "prop",
+            "config": {
+                "key": "rsi14",
+                "upper": 70,
+                "lower": 30
+            }
+        }
+    ]
+}
